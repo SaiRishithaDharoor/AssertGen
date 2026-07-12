@@ -1,5 +1,5 @@
 from parser.file_reader import read_rtl
-
+from parser.tokenizer import tokenize
 
 def main():
 
@@ -14,6 +14,12 @@ def main():
     print("--------------------------------")
 
     print("\nRTL loaded successfully.")
+
+    tokens = tokenize(rtl)
+    print("\nTOKENS\n")
+
+    for token in tokens:
+        print(token)
 
 
 if __name__ == "__main__":
