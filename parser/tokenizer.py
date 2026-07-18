@@ -1,6 +1,6 @@
 import re
 
-from models.token import Token
+from rtl_ast.token import Token
 
 
 KEYWORDS = {
