@@ -1,20 +1,25 @@
 class Parser:
-
+    
+    print("Loading parser.py")
     def __init__(self, tokens):
+
         self.tokens = tokens
         self.position = 0
 
+        print("=== Parser Created ===")
+        print("Position:", self.position)
+        print("Number of tokens:", len(self.tokens))
+    
     def current_token(self):
-        pass
 
-    def advance(self):
-        pass
+        print("\n=== current_token() ===")
+        print("Position:", self.position)
+        print("Length:", len(self.tokens))
 
-    def expect(self, token_type, value=None):
-        pass
+        if self.position >= len(self.tokens):
+            print("Returning None")
+            return None
 
-    def parse_file(self):
-        pass
+        print("Returning:", self.tokens[self.position])
 
-    def parse_module(self):
-        pass
+        return self.tokens[self.position]

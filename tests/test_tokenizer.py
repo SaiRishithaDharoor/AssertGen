@@ -9,7 +9,7 @@ from parser.tokenizer import tokenize
 
 def main():
 
-    rtl = read_rtl("examples/counter.sv")
+    rtl = read_rtl("examples/fsm.sv")
 
     print("========== RTL ==========\n")
     print(rtl)
