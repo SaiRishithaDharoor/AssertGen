@@ -3,20 +3,30 @@ from parser.tokenizer import tokenize
 from parser.parser import Parser
 
 
-rtl = read_rtl("examples/counter.sv")
+def main():
 
-print("RTL:")
-print(rtl)
+    rtl = read_rtl("examples/counter.sv")
 
-tokens = tokenize(rtl)
+    tokens = tokenize(rtl)
 
-print("\nNumber of tokens:", len(tokens))
+    parser = Parser(tokens)
 
-print("\nTokens:")
-for token in tokens:
-    print(token)
+    file = parser.parse_file()
 
-parser = Parser(tokens)
+    print(file)
 
-print("\nCurrent token:")
-print(parser.current_token())
+    print()
+
+    for module in file.modules:
+
+        print(module)
+
+        print("\nPorts:")
+
+        for port in module.ports:
+            print("   ", port)
+        
+        
+
+if __name__ == "__main__":
+    main()

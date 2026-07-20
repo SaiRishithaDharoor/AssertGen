@@ -10,4 +10,4 @@ class File(Node):
         self.modules.append(module)
 
     def __repr__(self):
-        return f"File(modules={len(self.modules)})"
+        return f"File({len(self.modules)} modules)"

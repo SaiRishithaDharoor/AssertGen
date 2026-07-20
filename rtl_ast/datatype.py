@@ -17,4 +17,13 @@ class DataType(Node):
         self.signed = signed
 
     def __repr__(self):
-        return f"{self.kind}"
+
+        text = self.kind
+
+        if self.signed:
+            text += " signed"
+
+        if self.width is not None:
+            text += f" {self.width}"
+
+        return text
